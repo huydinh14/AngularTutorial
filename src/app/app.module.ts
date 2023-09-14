@@ -8,13 +8,19 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 import { PageFooterComponent } from './page-footer/page-footer.component';
 import { MaterialModule } from './material/material.module';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { LibraryComponent } from './library/library.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageHeaderComponent,
     PageFooterComponent,
-    SideNavComponent
+    SideNavComponent,
+    LibraryComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

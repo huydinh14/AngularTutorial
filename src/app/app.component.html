@@ -1,12 +1,11 @@
-<app-page-header></app-page-header>
+<app-page-header (menuClicked)="sideNav.toggle()"></app-page-header>
 
 <mat-sidenav-container>
     <mat-sidenav mode="side" #sideNav opened class="mat-elevation-z6">
-        Sider
+        <side-nav></side-nav>
     </mat-sidenav>
     <mat-sidenav-content>
         <router-outlet>
-            Content
         </router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

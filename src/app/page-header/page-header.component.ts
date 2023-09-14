@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-page-header',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-header.component.sass']
 })
 export class PageHeaderComponent {
-
+  @Output() menuClicked = new EventEmitter<boolean>();
 }

@@ -1,28 +1,28 @@
 <h2>Login</h2>
 
-<mat-grid-list cols="1" rowHeight="70px" gutterSize="20px">
+<mat-grid-list cols="1" rowHeight="70px" gutterSize="20px" [formGroup]="loginForm">
 
     <mat-grid-tile>
         <mat-form-field appearance="fill" color="accent">
             <mat-label>Email</mat-label>
-            <input matInput>
-            <mat-error>Error</mat-error>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="this.Email.invalid">{{getEmailError()}}</mat-error>
         </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile>
         <mat-form-field appearance="fill" color="accent">
             <mat-label>Password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'">
+            <input matInput [type]="hide ? 'password' : 'text'"  formControlName="password">
             <button mat-icon-button matSuffix (click)="hide =! hide">
                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-            <mat-error>Error</mat-error>
+            <mat-error *ngIf="this.Password.invalid">{{getPasswordError()}}</mat-error>
         </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile colspan="1">
-        <button mat-flat-button color="accent" class="create-account-btnLogin">Login</button>
+        <button mat-flat-button color="accent" class="create-account-btnLogin" (click)="login()" [disabled]="loginForm.invalid">Login</button>
     </mat-grid-tile>
 
 </mat-grid-list>
